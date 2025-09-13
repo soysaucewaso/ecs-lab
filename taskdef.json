@@ -5,6 +5,16 @@
             "name": "sample-website",
             "image": "<IMAGE1_NAME>",
             "essential": true,
+            "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                "awslogs-group": "/ecs/nginx-fargate",
+                "awslogs-create-group": "true",
+                "awslogs-region": "us-west-1",
+                "awslogs-stream-prefix": "ecs"
+              },
+              "secretOptions": []
+            },
             "portMappings": [
                 {
                     "hostPort": 80,
